@@ -2,22 +2,28 @@ cmake_minimum_required(VERSION 3.14)
 
 add_library(
 	libecole
+
 	src/version.cpp
 	src/random.cpp
+	src/exception.cpp
+	src/utility/reverse-control.cpp
+
 	src/scip/scimpl.cpp
 	src/scip/model.cpp
 	src/scip/exception.cpp
-	src/utility/reverse-control.cpp
+
 	src/reward/isdone.cpp
 	src/reward/lpiterations.cpp
 	src/reward/solvingtime.cpp
 	src/reward/nnodes.cpp
+
+	src/observation/constraint-matrix.cpp
 	src/observation/nodebipartite.cpp
 	src/observation/strongbranchingscores.cpp
 	src/observation/pseudocosts.cpp
+
 	src/dynamics/branching.cpp
 	src/dynamics/configuring.cpp
-	src/exception.cpp
 )
 set_target_properties(libecole PROPERTIES OUTPUT_NAME ecole)
 
